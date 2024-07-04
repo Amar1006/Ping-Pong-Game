@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function gameScore() {
         let gameScore = document.getElementById('score-board');
-        
         gameScore.textContent = `Score: ${score}`;
     }
 
@@ -52,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(ballX > table.offsetWidth - ball.offsetWidth || ballX <= 0) dx *= -1;
         if(ballY > table.offsetHeight - ball.offsetHeight || ballY <= 0) dy *= -1;
         gameScore();
+
     }, 10);
 
     
@@ -72,5 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
         paddle.style.top = `${paddleY}px`
     })
 
+    document.addEventListener('mousemove', (event) => {
 
+        let mouseDistanceFromTop = event.clientY;   // this is the distance of the mouse point form the top
+        let distanceOfTableFromTop = table.offsetTop;
+        let mousePointControl = mouseDistanceFromTop - distanceOfTableFromTop - paddle.offsetHeight/2;
+        paddleY = mousePointControl;
+        
+        if(paddleY <= 0 || paddleY > table.offsetHeight - paddle.offsetHeight) return; // if bottom of the paddle touches bottom of the table then returns
+        paddle.style.top = `${paddleY}px`
+    })
 })
