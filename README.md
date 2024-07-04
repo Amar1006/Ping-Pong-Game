@@ -6,7 +6,7 @@
 
 ### Rules:
 1. For every successfull collision between the paddle and ball, player will get `10 points`.
-2. After every successfull collision between the paddle and ball, ***color of the paddle change***.
+2. After every successfull collision between the paddle and ball, ***color of the paddle will change***.
 
 ### Glimpse
 
