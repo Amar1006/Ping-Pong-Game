@@ -1,4 +1,4 @@
-# Adding feature of power mode 
+// # Adding feature of power mode 
 
 document.addEventListener('DOMContentLoaded', () => {
 
